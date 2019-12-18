@@ -5,7 +5,7 @@ import java.util.Date;
 
 /**
  * <b>用户信息实体类</b>
- * @author Arthur
+ * @author Qiaojia
  * @version 3.1.0 2019-12-12
  * @since 3.1.0
  */

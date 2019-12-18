@@ -22,4 +22,20 @@ public interface UserDao {
 	 * @throws Exception
 	 */
 	List<User> findUserByQuery(Map<String, Object> queryMap) throws Exception;
+
+
+	/**
+	 * <b>保存用户信息</b>
+	 * @param user
+	 * @throws Exception
+	 */
+	void saveUser(User user) throws Exception;
+
+
+	/**
+	 * <b>激活用户账号</b>
+	 * @param paramMap
+	 * @return
+	 */
+	void activeUserCode(Map<String, Object> paramMap);
 }

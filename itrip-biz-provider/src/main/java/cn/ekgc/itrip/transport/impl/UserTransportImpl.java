@@ -4,10 +4,7 @@ import cn.ekgc.itrip.pojo.entity.User;
 import cn.ekgc.itrip.service.UserService;
 import cn.ekgc.itrip.transport.UserTransport;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * <b>用户信息传输层接口实现类</b>
@@ -30,5 +27,40 @@ public class UserTransportImpl implements UserTransport {
 	@RequestMapping(value = "/code", method = RequestMethod.POST)
 	public User getUserByUserCode(@RequestParam String userCode) throws Exception {
 		return userService.getUserByUserCode(userCode);
+	}
+	/**
+	 * <b>保存用户信息</b>
+	 * @param user
+	 * @return
+	 * @throws Exception
+	 */
+	@RequestMapping(value = "/save", method = RequestMethod.POST)
+	public boolean saveUser(@RequestBody User user) throws Exception {
+		return userService.saveUser(user);
+	}
+
+	/**
+	 * <b>激活用户账户</b>
+	 * @param user
+	 * @param code
+	 * @return
+	 */
+	@RequestMapping(value = "/active", method = RequestMethod.POST)
+	public boolean activeUserCode(@RequestParam String user,@RequestParam String code) throws Exception {
+
+		return userService.activeUserCode(user,code);
+	}
+
+
+	/**
+	 * <b>使用userCode和userPassword进行用户信息登录</b>
+	 * @param userCode
+	 * @param userPassword
+	 * @return
+	 * @throws Exception
+	 */
+	@RequestMapping(value = "/login", method = RequestMethod.POST)
+	public User doLoginUser(@RequestParam String userCode, @RequestParam String userPassword) throws Exception {
+		return userService.doLoginUser(userCode, userPassword);
 	}
 }

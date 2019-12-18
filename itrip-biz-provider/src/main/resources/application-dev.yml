@@ -20,6 +20,16 @@ spring:
       initial-size: 5
       min-evictable-idle-time-millis: 30000
       max-evictable-idle-time-millis: 60000
+
+  ###配置redis相关信息
+  redis:
+    host: localhost
+    port: 6379
+  ###配置mail相关信息
+  mail:
+    host: smtp.163.com
+    username: qiaojiahj@163.com
+    password: qwerdf123456
 ### Mybatis先关配置信息
 mybatis:
   mapper-locations: classpath:/mapper/*.mapper.xml
