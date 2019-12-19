@@ -8,7 +8,7 @@ spring:
   ### Solr服务所在地址
   data:
     solr:
-      host: http://localhost:8080/solr
+      host: http://localhost:8080/solr/itrip
 ### Eureka Server地址
 eureka:
   client:
